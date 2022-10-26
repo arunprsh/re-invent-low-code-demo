@@ -12,7 +12,7 @@
 * workshop external link ?? https://studio.workshops.aws/
 * workshop catalog: https://studio.workshops.aws/
 * Instructions to make your workshop event ready: https://catalog.workshops.aws/docs/en-US/create-a-workshop/defining-workshop-events
-* 
+
 
 
 
