@@ -133,6 +133,60 @@
           "name": "default"
         }
       ]
+    },
+    {
+      "node_id": "54788c9c-4580-4ffc-999e-a40ff87f880b",
+      "type": "TRANSFORM",
+      "operator": "sagemaker.spark.join_tables_0.1",
+      "name": "joined-dataset",
+      "parameters": {
+        "left_column": "id",
+        "right_column": "id",
+        "join_type": "inner"
+      },
+      "inputs": [
+        {
+          "name": "df",
+          "node_id": "fa77e4f9-8ec2-4ccb-9cb6-a5849bd447b5",
+          "output_name": "default"
+        },
+        {
+          "name": "df",
+          "node_id": "36aa74f5-0a0a-4c3d-a99b-150089266868",
+          "output_name": "default"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "default"
+        }
+      ]
+    },
+    {
+      "node_id": "613bac0b-c31f-4f53-8686-401f594e3634",
+      "type": "TRANSFORM",
+      "operator": "sagemaker.spark.manage_columns_0.1",
+      "parameters": {
+        "operator": "Drop column",
+        "drop_column_parameters": {
+          "column_to_drop": [
+            "id_0",
+            "id_1"
+          ]
+        }
+      },
+      "inputs": [
+        {
+          "name": "df",
+          "node_id": "54788c9c-4580-4ffc-999e-a40ff87f880b",
+          "output_name": "default"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "default"
+        }
+      ]
     }
   ]
 }
