@@ -75,6 +75,64 @@
           "name": "default"
         }
       ]
+    },
+    {
+      "node_id": "90185f7c-8cf0-4199-b2cc-27c7a183633d",
+      "type": "SOURCE",
+      "operator": "sagemaker.athena_source_0.1",
+      "parameters": {
+        "dataset_definition": {
+          "datasetSourceType": "Athena",
+          "name": "loans-part-2.csv",
+          "catalogName": "AwsDataCatalog",
+          "databaseName": "sagemaker_data_wrangler",
+          "queryString": "select * from loan_default_demographics",
+          "s3OutputLocation": "s3://sagemaker-us-east-1-119174016168/athena/athena/",
+          "outputFormat": "parquet",
+          "workgroup": null,
+          "workgroupOutputLocation": null,
+          "enforceWorkgroupConfiguration": false
+        },
+        "dataSource": {}
+      },
+      "trained_parameters": {
+        "query_execution_id": "f0a21a5f-bf6e-4148-8727-110a7b186e26",
+        "unload_table_name": "9bfa03fa38674a69a724f9834167cf63",
+        "unload_s3_output_location": "s3://sagemaker-us-east-1-119174016168/athena/athena/9bfa03fa38674a69a724f9834167cf63/data/"
+      },
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "default"
+        }
+      ]
+    },
+    {
+      "node_id": "36aa74f5-0a0a-4c3d-a99b-150089266868",
+      "type": "TRANSFORM",
+      "operator": "sagemaker.spark.infer_and_cast_type_0.1",
+      "parameters": {},
+      "trained_parameters": {
+        "schema": {
+          "employer_title": "string",
+          "home_ownership": "string",
+          "id": "long",
+          "employment_length": "float",
+          "annual_income": "float"
+        }
+      },
+      "inputs": [
+        {
+          "name": "default",
+          "node_id": "90185f7c-8cf0-4199-b2cc-27c7a183633d",
+          "output_name": "default"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "default"
+        }
+      ]
     }
   ]
 }
