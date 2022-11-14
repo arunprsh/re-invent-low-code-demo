@@ -192199,6 +192199,32 @@
           "name": "default"
         }
       ]
+    },
+    {
+      "node_id": "70c4e2d7-f5fd-487e-9fda-29317571c193",
+      "type": "DESTINATION",
+      "operator": "sagemaker.spark.s3_destination_0.1",
+      "name": "S3: transformed-features-loan-default",
+      "parameters": {
+        "output_config": {
+          "compression": "none",
+          "output_path": "s3://sagemaker-us-east-1-119174016168/datasets/final/",
+          "output_content_type": "CSV",
+          "delimiter": ","
+        }
+      },
+      "inputs": [
+        {
+          "name": "default",
+          "node_id": "f37da091-83d1-489a-87d8-5c00481e440b",
+          "output_name": "default"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "default"
+        }
+      ]
     }
   ]
 }
